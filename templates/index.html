@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Predict</title>
+    <link rel="stylesheet" href="{{ url_for('static',filename='styles/styles.css')}}">
+</head>
+<body>
+    <div class="header">
+        <h1>Home Price Prediction</h1>
+    </div>
+    <div class="content">
+        <form action="{{ url_for('predict')}}" method="post">
+            <div class="cont">
+                <div class="grid1">
+                    <h2>Location</h2>
+                    <select name="Location" id="Location">
+                        
+                    </select>
+                    <h2>Area (Square Feet)</h2>
+                    <input id="area" type="text" name="Area">
+                    <h2>BHK</h2>
+                    <input id="BHK" type="text" name="BHK">
+                    <h2>Bathrooms</h2>
+                    <input id="Bathrooms" type="text" name="Bathrooms">
+                    <h2>Rate per Sq.Ft</h2>
+                    <input id="rate" type="text" name="rate">
+                </div>
+                
+                <div class="grid2">
+                    <h2>Parking</h2>
+                    <select  name="park" id="Parking">
+                        <option value="" disabled="disabled" selected="selected">Select one</option>
+                            <option>Yes</option>
+                            <option>No</option>
+                      </select>
+                    <h2>Status</h2>
+                    <select  name="stat" id="status">
+                        <option value="" disabled="disabled" selected="selected">Select one</option>
+                            <option>Fully-Furnished</option>
+                            <option>Semi-Furnished</option>
+                            <option>Un-Furnished</option>
+                    </select>
+                    <h2>Ready To Move</h2>
+                    <select  name="rtm" id="ready">
+                        <option value="" disabled="disabled" selected="selected">Select one</option>
+                            <option>Yes</option>
+                            <option>No</option>
+                      </select>
+                      <h2>New</h2>
+                      <select  name="nw" id="New">
+                        <option value="" disabled="disabled" selected="selected">Select one</option>
+                            <option>Yes</option>
+                            <option>No</option>
+                      </select>
+                      <h2>Type</h2>
+                      <select  name="ty" id="Type">
+                        <option value="" disabled="disabled" selected="selected">Select one</option>
+                        <option>Builder Floor</option>
+                        <option>Apartment</option>
+                      </select>
+                </div>
+            </div>
+            <div class="buttonn">
+                <button class="submit" type="button">Estimate Price</button>
+            </div>    
+        </form>
+        
+        <div class="answer">
+            {{ prediction_text }}
+        </div>
+    </div>
+    <script type="text/javascript" src="{{ url_for('static',filename='app/index.js')}}"></script>
+</body>
+</html>

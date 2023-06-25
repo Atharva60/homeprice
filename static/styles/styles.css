@@ -1,0 +1,38 @@
+body{
+    margin: 0%;
+}
+.header{
+    background-color: aquamarine;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    text-align: center;
+}
+
+.content{
+    background-color: coral;
+    padding-top: 20px;
+}
+
+.cont{
+    display: flex;
+}
+
+.grid1{
+    margin: auto;
+}
+
+.grid2{
+    margin: auto;
+}
+
+.buttonn{
+    padding-left: 623.531px;
+    padding-top: 50px;
+}
+
+.answer{
+    padding-top: 20px;
+    padding-bottom: 20px;
+    display: flex;
+    justify-content: center;
+}
